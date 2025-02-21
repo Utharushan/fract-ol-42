@@ -17,8 +17,10 @@ t_complex	map_to_complex(int x, int y, t_fractol *fractal)
 {
 	t_complex	c;
 
-	c.re = (x - WIDTH / 2.0) * (4.0 / WIDTH) * fractal->zoom + fractal->offset_x;
-	c.im = (y - HEIGHT / 2.0) * (4.0 / HEIGHT) * fractal->zoom + fractal->offset_y;
+	c.re = (x - WIDTH / 2.0) * (4.0 / WIDTH) * fractal->zoom
+		+ fractal->offset_x;
+	c.im = (y - HEIGHT / 2.0) * (4.0 / HEIGHT) * fractal->zoom
+		+ fractal->offset_y;
 	return (c);
 }
 

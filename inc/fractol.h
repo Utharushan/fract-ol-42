@@ -32,22 +32,23 @@ typedef struct s_complex
 
 typedef struct s_fractol
 {
-	void	*mlx;
-	void	*win;
-	void	*img;
-	char	*addr;
-	int		bpp;
-	int		line_length;
-	int		endian;
-	int		type;
-	double	zoom;
-	double	offset_x;
-	double	offset_y;
+	void		*mlx;
+	void		*win;
+	void		*img;
+	char		*addr;
+	int			bpp;
+	int			line_length;
+	int			endian;
+	int			type;
+	double		zoom;
+	double		offset_x;
+	double		offset_y;
 	t_complex	julia_c;
 }	t_fractol;
 
 /* Initialization */
-void	init_fractol(t_fractol *fractal, int type, double julia_re, double julia_im);
+void	init_fractol(t_fractol *fractal, int type,
+			double julia_re, double julia_im);
 void	render_fractal(t_fractol *fractal);
 
 /* Mandelbrot */

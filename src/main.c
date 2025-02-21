@@ -27,7 +27,8 @@ int	main(int argc, char **argv)
 
 	julia_re = -0.8;
 	julia_im = 0.156;
-	if (argc < 2 || (ft_strncmp(argv[1], "julia", ft_strlen("julia")) == 0 && argc != 2 && argc != 4))
+	if (argc < 2 || (ft_strncmp(argv[1], "julia", ft_strlen("julia")) == 0
+			&& argc != 2 && argc != 4))
 		show_usage();
 	if (ft_strncmp(argv[1], "mandelbrot", ft_strlen("mandelbrot")) == 0)
 		init_fractol(&fractal, 0, 0, 0);
