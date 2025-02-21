@@ -13,7 +13,7 @@
 #include "fractol.h"
 
 // Initializes the fractal struct (julia.re = -0.7, julia.im = 0.27015)
-void	init_fractol(t_fractol *fractal, int type)
+void	init_fractol(t_fractol *fractal, int type, double julia_re, double julia_im)
 {
 	fractal->mlx = mlx_init();
 	if (!fractal->mlx)
@@ -26,8 +26,8 @@ void	init_fractol(t_fractol *fractal, int type)
 	fractal->zoom = 1.0;
 	fractal->offset_x = 0.0;
 	fractal->offset_y = 0.0;
-	fractal->julia_c.re = -0.7; 
-	fractal->julia_c.im = 0.27015;
+	fractal->julia_c.re = julia_re;
+	fractal->julia_c.im = julia_im;
 	mlx_key_hook(fractal->win, handle_key, fractal);
 	mlx_mouse_hook(fractal->win, handle_mouse, fractal);
 	mlx_hook(fractal->win, 17, 0, close_window, fractal);

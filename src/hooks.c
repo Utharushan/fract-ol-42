@@ -14,7 +14,7 @@
 
 int	handle_key(int keycode, t_fractol *fractal)
 {
-	if (keycode == 53)
+	if (keycode == 65307)
 		close_window(fractal);
 	return (0);
 }
