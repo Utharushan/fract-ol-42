@@ -21,9 +21,11 @@ void	show_usage(void)
 
 void	setup_fractal(int argc, char **argv, t_fractol *fractal)
 {
-	double	julia_re = -0.8;
-	double	julia_im = 0.156;
+	double	julia_re;
+	double	julia_im;
 
+	julia_re = -0.8;
+	julia_im = 0.156;
 	if (ft_strncmp(argv[1], "mandelbrot", ft_strlen("mandelbrot")) == 0)
 		init_fractol(fractal, 0, 0, 0);
 	else if (ft_strncmp(argv[1], "julia", ft_strlen("julia")) == 0)
