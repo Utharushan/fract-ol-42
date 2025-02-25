@@ -19,19 +19,13 @@ void	show_usage(void)
 	exit(1);
 }
 
-int	main(int argc, char **argv)
+void	setup_fractal(int argc, char **argv, t_fractol *fractal)
 {
-	t_fractol	fractal;
-	double		julia_re;
-	double		julia_im;
+	double	julia_re = -0.8;
+	double	julia_im = 0.156;
 
-	julia_re = -0.8;
-	julia_im = 0.156;
-	if (argc < 2 || (ft_strncmp(argv[1], "julia", ft_strlen("julia")) == 0
-			&& argc != 2 && argc != 4))
-		show_usage();
 	if (ft_strncmp(argv[1], "mandelbrot", ft_strlen("mandelbrot")) == 0)
-		init_fractol(&fractal, 0, 0, 0);
+		init_fractol(fractal, 0, 0, 0);
 	else if (ft_strncmp(argv[1], "julia", ft_strlen("julia")) == 0)
 	{
 		if (argc == 4)
@@ -39,11 +33,22 @@ int	main(int argc, char **argv)
 			julia_re = ft_atof(argv[2]);
 			julia_im = ft_atof(argv[3]);
 		}
-		init_fractol(&fractal, 1, julia_re, julia_im);
+		init_fractol(fractal, 1, julia_re, julia_im);
 	}
 	else
 		show_usage();
+}
+
+int	main(int argc, char **argv)
+{
+	t_fractol	fractal;
+
+	if (argc < 2 || (ft_strncmp(argv[1], "julia", ft_strlen("julia")) == 0
+			&& argc != 2 && argc != 4))
+		show_usage();
+	setup_fractal(argc, argv, &fractal);
 	render_fractal(&fractal);
 	mlx_loop(fractal.mlx);
+	close_window(&fractal);
 	return (0);
 }

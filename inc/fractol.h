@@ -49,6 +49,7 @@ typedef struct s_fractol
 /* Initialization */
 void	init_fractol(t_fractol *fractal, int type,
 			double julia_re, double julia_im);
+void	setup_fractal(int argc, char **argv, t_fractol *fractal);
 void	render_fractal(t_fractol *fractal);
 
 /* Mandelbrot */

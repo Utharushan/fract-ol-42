@@ -33,7 +33,15 @@ int	handle_mouse(int button, int x, int y, t_fractol *fractal)
 
 int	close_window(t_fractol *fractal)
 {
-	mlx_destroy_window(fractal->mlx, fractal->win);
-	exit(0);
-	return (0);
+    if (fractal->img)
+        mlx_destroy_image(fractal->mlx, fractal->img);
+    if (fractal->win)
+        mlx_destroy_window(fractal->mlx, fractal->win);
+    if (fractal->mlx)
+    {
+        mlx_destroy_display(fractal->mlx);
+        free(fractal->mlx);
+    }
+    exit(0);
+    return (0);
 }
