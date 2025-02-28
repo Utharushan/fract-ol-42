@@ -19,6 +19,7 @@ INCLUDES	= -Iinc -Ilibftprintf/inc
 SRC_DIR		= src
 OBJ_DIR		= obj
 LIBFTPRINTF_DIR	= libftprintf
+MLX_DIR		= minilibx-linux
 
 SRCS		= $(SRC_DIR)/main.c \
 			  $(SRC_DIR)/fractol_utils.c \
@@ -33,6 +34,7 @@ all: $(NAME)
 
 $(LIBFTPRINTF):
 	@make -C $(LIBFTPRINTF_DIR)
+	@make -C $(MLX_DIR)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
@@ -44,10 +46,12 @@ $(NAME): $(LIBFTPRINTF) $(OBJS)
 clean:
 	@rm -rf $(OBJ_DIR)
 	@make clean -C $(LIBFTPRINTF_DIR)
+	@make clean -C $(MLX_DIR)
 
 fclean: clean
 	@rm -f $(NAME)
 	@make fclean -C $(LIBFTPRINTF_DIR)
+	@make clean -C $(MLX_DIR)
 
 re: fclean all
 
