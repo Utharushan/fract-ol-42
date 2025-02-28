@@ -46,7 +46,8 @@ int	main(int argc, char **argv)
 	t_fractol	fractal;
 
 	if (argc < 2 || (ft_strncmp(argv[1], "julia", ft_strlen("julia")) == 0
-			&& argc != 2 && argc != 4))
+			&& argc != 2 && argc != 4) || (ft_strncmp(argv[1], "mandelbrot",
+				ft_strlen("mandelbrot")) == 0 && argc != 2))
 		show_usage();
 	setup_fractal(argc, argv, &fractal);
 	render_fractal(&fractal);
