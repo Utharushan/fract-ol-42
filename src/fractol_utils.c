@@ -20,7 +20,11 @@ void	init_fractol(t_fractol *fractal, int type,
 	if (!fractal->mlx)
 		exit(1);
 	fractal->win = mlx_new_window(fractal->mlx, WIDTH, HEIGHT, "fractol");
+	if (!fractal->win)
+		exit(1);
 	fractal->img = mlx_new_image(fractal->mlx, WIDTH, HEIGHT);
+	if (!fractal->img)
+		exit(1);
 	fractal->addr = mlx_get_data_addr(fractal->img, &fractal->bpp,
 			&fractal->line_length, &fractal->endian);
 	fractal->type = type;
