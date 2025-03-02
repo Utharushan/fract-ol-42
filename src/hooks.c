@@ -12,13 +12,14 @@
 
 #include "fractol.h"
 
+// Handle key press events
 int	handle_key(int keycode, t_fractol *fractal)
 {
 	if (keycode == 65307)
 		close_window(fractal);
 	return (0);
 }
-
+// Handle mouse events
 int	handle_mouse(int button, int x, int y, t_fractol *fractal)
 {
 	(void)x;
@@ -31,6 +32,7 @@ int	handle_mouse(int button, int x, int y, t_fractol *fractal)
 	return (0);
 }
 
+// Close the window and clean up resources
 int	close_window(t_fractol *fractal)
 {
 	if (fractal->img)

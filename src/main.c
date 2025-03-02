@@ -12,6 +12,7 @@
 
 #include "fractol.h"
 
+// Function to show usage instructions
 void	show_usage(void)
 {
 	ft_printf("Usage: ./fractol <fractal_type> [<julia_re> <julia_im>]\n");
@@ -22,6 +23,7 @@ void	show_usage(void)
 	exit(1);
 }
 
+// Function to set up the fractal based on user input
 void	setup_fractal(int argc, char **argv, t_fractol *fractal)
 {
 	double	julia_re;
@@ -44,6 +46,7 @@ void	setup_fractal(int argc, char **argv, t_fractol *fractal)
 		show_usage();
 }
 
+// Main function
 int	main(int argc, char **argv)
 {
 	t_fractol	fractal;

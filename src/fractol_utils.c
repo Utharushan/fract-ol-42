@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-// Initializes the fractal struct (julia.re = -0.7, julia.im = 0.27015)
+// Initializes the fractal struct
 void	init_fractol(t_fractol *fractal, int type,
 	double julia_re, double julia_im)
 {
@@ -38,6 +38,7 @@ void	init_fractol(t_fractol *fractal, int type,
 	mlx_hook(fractal->win, 17, 0, close_window, fractal);
 }
 
+// Puts a pixel on the image at the specified coordinates with the given color
 void	put_pixel(t_fractol *fractal, int x, int y, int color)
 {
 	char	*dst;
