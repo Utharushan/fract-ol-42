@@ -33,8 +33,8 @@ OBJS		= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 all: $(NAME)
 
 $(LIBFTPRINTF):
-	@make -C $(LIBFTPRINTF_DIR)
-	@make -C $(MLX_DIR)
+	@make -sC $(LIBFTPRINTF_DIR)
+	@make -sC $(MLX_DIR)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
@@ -45,13 +45,13 @@ $(NAME): $(LIBFTPRINTF) $(OBJS)
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@make clean -C $(LIBFTPRINTF_DIR)
-	@make clean -C $(MLX_DIR)
+	@make clean -sC $(LIBFTPRINTF_DIR)
+	@make clean -sC $(MLX_DIR)
 
 fclean: clean
 	@rm -f $(NAME)
-	@make fclean -C $(LIBFTPRINTF_DIR)
-	@make clean -C $(MLX_DIR)
+	@make fclean -sC $(LIBFTPRINTF_DIR)
+	@make clean -sC $(MLX_DIR)
 
 re: fclean all
 

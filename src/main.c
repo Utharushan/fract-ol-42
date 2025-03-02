@@ -16,6 +16,8 @@ void	show_usage(void)
 {
 	ft_printf("Usage: ./fractol <fractal_type> [<julia_re> <julia_im>]\n");
 	ft_printf("Available fractals: mandelbrot, julia\n");
+	ft_printf("Some available parameters :\n");
+	ft_printf("(0.3, 0.5), (0.285, 0.01), (-0.7, 0.27015), (-1,476, 0)\n");
 	exit(1);
 }
 
