@@ -19,6 +19,7 @@ int	handle_key(int keycode, t_fractol *fractal)
 		close_window(fractal);
 	return (0);
 }
+
 // Handle mouse events
 int	handle_mouse(int button, int x, int y, t_fractol *fractal)
 {
