@@ -33,7 +33,7 @@ void	setup_fractal(int argc, char **argv, t_fractol *fractal)
 	julia_im = 0.156;
 	if (ft_strncmp(argv[1], "mandelbrot", 11) == 0)
 		init_fractol(fractal, 0, 0, 0);
-	else if (ft_strncmp(argv[1], "julia", 6)) == 0)
+	else if (ft_strncmp(argv[1], "julia", 6) == 0)
 	{
 		if (argc == 4)
 		{
